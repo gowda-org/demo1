@@ -41,8 +41,7 @@ jobs:
               const sha = c.sha.substring(0,7);
               const msg = c.commit && c.commit.message ? c.commit.message.split('\n')[0] : '';
               const author = (c.author && c.author.login) || (c.commit && c.commit.author && c.commit.author.name) || 'unknown';
-              return `- [\
-${sha}](https://github.com/${owner}/${repo}/commit/${c.sha}) ${msg} — @${author}`;
+              body += `- [${sha}](https://github.com/${owner}/${repo}/commit/${c.sha}) ${msg} — @${author}`;
             }
 
             let body = `## Daily Activity Report (${new Date().toISOString().slice(0,10)})\n\n**Since:** ${since}\n\n`;
