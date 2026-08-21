@@ -5,9 +5,9 @@ on:
     - cron: '0 0 * * *' # daily at 00:00 UTC
   workflow_dispatch:
 
-permissions:
-  copilot-requests: write
+permissions:  
   contents: read
+  issues: write
 jobs:
   create-report:
     name: Create daily activity report and open issue
