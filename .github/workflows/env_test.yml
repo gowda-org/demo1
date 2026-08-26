@@ -1,0 +1,12 @@
+jobs:
+  plan:
+    outputs:
+      plan: ${{ steps.generate_plan.outputs.plan }}
+    steps:
+      - id: generate_plan
+        run: echo "plan=..." >> "$GITHUB_OUTPUT"
+
+  implement:
+    needs: plan
+    steps:
+      - run: echo "Using plan: ${{ needs.plan.outputs.plan }}"
