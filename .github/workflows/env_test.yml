@@ -1,5 +1,6 @@
 jobs:
   plan:
+    runs-on: ubuntu-latest
     outputs:
       plan: ${{ steps.generate_plan.outputs.plan }}
     steps:
@@ -7,6 +8,7 @@ jobs:
         run: echo "plan=..." >> "$GITHUB_OUTPUT"
 
   implement:
+    runs-on: ubuntu-latest
     needs: plan
     steps:
       - run: echo "Using plan: ${{ needs.plan.outputs.plan }}"
