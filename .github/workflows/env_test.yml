@@ -10,7 +10,11 @@ jobs:
       plan: ${{ steps.generate_plan.outputs.plan }}
     steps:
       - id: generate_plan
-        run: echo "plan=..." >> "$GITHUB_OUTPUT"
+        run: |
+          echo "plan=high level steps..." >> "$GITHUB_OUTPUT"
+
+      - run: |
+          echo "Plan: ${{ steps.generate_plan.outputs.plan }}"
 
   implement:
     runs-on: ubuntu-latest
