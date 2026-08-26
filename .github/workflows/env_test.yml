@@ -1,3 +1,5 @@
+name: Environment Test
+
 jobs:
   plan:
     runs-on: ubuntu-latest
