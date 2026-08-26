@@ -13,4 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: plan
     steps:
-      - run: echo "Using plan: ${{ needs.plan.outputs.plan }}"
+      - name: Print plan
+        run: echo "Using plan: ${{ needs.plan.outputs.plan }}"
