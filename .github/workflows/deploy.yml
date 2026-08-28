@@ -14,6 +14,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production    # ← this is the gate
+    environment: development    # ← this is the gate
     steps:
       - run: echo "Deploying ${{ inputs.version }} (would actually deploy here)"
